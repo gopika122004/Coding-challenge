@@ -1,0 +1,27 @@
+def get_max_toys(prices, money):
+    """Calculates the maximum number of toys that can be purchased.
+
+    Args:
+        prices: A list of integer prices.
+        money: The available budget.
+
+    Returns:
+        The maximum number of toys that can be purchased.
+    """
+
+    prices.sort()  # Sort the prices in ascending order
+    count = 0
+    total_cost = 0
+
+    for price in prices:
+        if total_cost + price <= money:
+            total_cost += price
+            count += 1
+
+    return count
+
+# Example usage:
+prices = [1, 4, 5, 3, 2, 1, 6]
+money = 6
+max_toys = get_max_toys(prices, money)
+print(max_toys)  # Output: 3
