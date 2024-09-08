@@ -1,0 +1,21 @@
+def reduce_ticket_price(ticket_price, k):
+    """Reduces the ticket price by removing digits.
+
+    Args:
+        ticket_price: The original ticket price as a string.
+        k: The number of digits to remove.
+
+    Returns:
+        The reduced ticket price as an integer.
+    """
+
+    digits = list(ticket_price)
+    for _ in range(k):
+        digits.remove(min(digits))
+    return int(''.join(digits))
+
+# Example usage:
+ticket_price = "203"
+k = 2
+reduced_price = reduce_ticket_price(ticket_price, k)
+print(reduced_price)  # Output: 0
